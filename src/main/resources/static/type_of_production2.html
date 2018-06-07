@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Type Of Production</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+          integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body ng-app = "demo">
+<div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" >
+    <div class="container-fluid"><div class="panel panel-default">
+        <div class="datagrid">
+            <table>
+                <tbody>
+                <tr>
+                    <th class="my-th" style="width: 70px">
+                        <a href="\index.html" style="color: white">Головна</a>
+                    </th>
+                    <th class = "my-th" style="width:50px">
+                        <a href="\buyers.html" style="color:white;">Покупці</a>
+                    </th>
+                    <th class = "my-th" style="width:50px">
+                        <a href="\buyers_has_medicines2.html" style="color:white;">Покупці-Медикаменти</a>
+                    </th>
+                    <th class = "my-th" style="width:50px">
+                        <a href="\dates_of_ordering_and_receiving2.html" style="color:white;">Дати</a>
+                    </th>
+                    <th class = "my-th" style="width:50px">
+                        <a href="\general_type_of_medicine2.html" style="color:white;">Загальний тип</a>
+                    </th>
+                    <th class = "my-th" style="width:50px">
+                        <a href="\ingredients2.html" style="color:white;">Інгредіенти</a>
+                    </th>
+                    <th class = "my-th" style="width:50px">
+                        <a href="\medicine2.html" style="color:white;">Медикаменти</a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+
+                    </th>
+                    <th class = "my-th" style="width:50px">
+                        <a href="\medicine_has_ingredients2.html" style="color:white;">Медикаменти-Інгредіенти</a>
+                    </th>
+                    <th class = "my-th" style="width:50px">
+                        <a href="\order_status2.html" style="color:white;">Статус замовлення</a>
+                    </th>
+                    <th class = "my-th" style="width:50px">
+                        <a href="\type_of_medicine2.html"style="color:white;">Тип медикаменту</a>
+                    </th>
+                    <th class = "my-th" style="width:50px">
+                        <a href="\type_of_medicine_has_type_of_using2.html" style="color:white;">Медикамент-Використання</a>
+                    </th>
+                    <th class = "my-th-clicked" style="width:50px">
+                        <a href="\type_of_production2.html" style="color:white;">Тип вироблення</a>
+                    </th>
+                    <th class = "my-th" style="width:50px">
+                        <a href="\type_of_using2.html" style="color:white;">Тип використання</a>
+                    </th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-heading">Тип виготовлення</div>
+        <div class="datagrid">
+
+            <table >
+                <thead>
+                <tr>
+
+                    <th style="width: 30px; padding-left: 3px">id</th>
+                    <th style="padding-left: 3px">Назва типу виготовлення</th>
+                    <th style="width: 85px">
+                        <button style="width: 85px" type="button" class="btn btn-succ"
+                                data-toggle="modal" data-target="#addModal"
+                    >Add</button></th>
+
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat = "item in typeOfProduction">
+
+                    <td style="padding-left: 3px">{{item.id}}</td>
+                    <td style="padding-left: 3px">{{item.nameOfType}}</td>
+                    <td><button type="button" class="btn btn-warn" style="padding: 0px; height: 20px; width: 40px;"
+                                data-toggle="modal" data-target="#updateModal"
+                                ng-click="ctrl.start_update_type_of_production(item.id, item.nameOfType)"
+                    >Update</button>
+                        <button type="button" class="btn btn-dang" style="padding: 0px; height: 20px; width: 40px;"
+                                ng-click="ctrl.del_type_of_production(item.id)"
+                        >Delete</button></td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+        <!--add type of production-->
+        <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addModalLabel">Додавання запису</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Закрити">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        Введіть Id типу
+                        <input type="text" id="typeOfProductionID">
+                        <br>
+                        Введіть назву типу виготовлення
+                        <br>
+                        <input type="text" id="typeOfProductionName">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" style="cursor:pointer" data-dismiss="modal">Закрити</button>
+                        <button type="button" style="cursor:pointer"  ng-click="ctrl.insert_type_of_production()">Додати</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--update type of production-->
+        <div class="modal fade" id="updateModal" tabindex="-2" role="dialog" aria-labelledby="updateModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateModalLabel">Редагування запису</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Закрити">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Введіть нову назву типу виготовлення
+                        <br>
+                        <input type="text" id="typeOfProductionNameUPD">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" style="cursor:pointer"
+                                data-dismiss="modal">Закрити</button>
+                        <button type="button" style="cursor:pointer"
+                                ng-click="ctrl.update_type_of_production()">Змінити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/typeOfProduction.js"></script>
+</html>
+

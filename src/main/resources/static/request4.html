@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Запит №4</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body ng-app = "demo" style="margin: 15px">
+<div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" >
+    <div class="container-fluid">
+        <div class="datagrid" >
+            <table>
+                <tbody>
+                <tr>
+                    <th class="my-th" style="width: 70px">
+                        <a href="\index.html" style="color: white">Головна</a>
+                    </th>
+                    <th class="my-th" style="width: 50px">
+                        <a href="\request1.html" style="color: white">1</a>
+                    </th>
+                    <th  class="my-th" style="width: 50px">
+                        <a href="\request2_all.html" style="color: white">2.1</a>
+                    </th>
+                    <th class="my-th"style="width: 50px">
+                        <a href="\request2_type.html" style="color: white">2.2</a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request3_all.html" style="color: white">3.1</a>
+                    </th>
+                    <th class="my-th"style="width: 50px">
+                        <a href="\request3_type.html" style="color: white">3.2</a>
+                    </th>
+                    <th  class="my-th-selected" style="width: 50px">
+                        <a href="\request4.html" style="color: white"> 4 </a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request5.html" style="color: white"> 5 </a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request6_all_crit_rate.html" style="color: white">6.1</a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request6_all_exp_term.html" style="color: white">6.2</a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request6_types_crit_rate.html" style="color: white">6.3</a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request6_types_exp_term.html" style="color: white">6.4</a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request7.html" style="color: white"> 7 </a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request8.html" style="color: white"> 8 </a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request9.html" style="color: white"> 9 </a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request10_made.html" style="color: white">10.1</a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request10_officinal.html" style="color: white">10.2</a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request11_all.html" style="color: white">11.1</a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request11_medicine.html" style="color: white">11.2</a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request11_type.html" style="color: white">11.3</a>
+                    </th>
+                    <th  class="my-th"style="width: 50px">
+                        <a href="\request12.html" style="color: white">12</a>
+                    </th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-heading">
+            Обсяг речовин, який був використаний для виготовлення ліків протягом вказаного періоду</div>
+        <div  style="font-size: 20px"> Тип медикаментів:
+            Початкова дата:
+            <input type="text" id="FirstDate" style="width: 80px" placeholder="Р-М-Ч">
+            </input>
+            &ensp;
+            Кінцева дата:
+            <input type="text" id="SecondDate" style="width: 80px" placeholder="Р-М-Ч">
+            </input>
+            &ensp;
+            <button  type="button" class="btn button-main" style="color: white;width: 90px; height: 30px; padding: 0px;font-size: 16px"
+                     ng-click="ctrl.update_request()">
+                Змінити
+            </button>
+            <br>
+        </div>
+        <div class="datagrid">
+
+            <table >
+                <thead>
+                <tr>
+                    <th style="padding-left: 3px">Інгредіент</th>
+                    <th style="padding-left: 3px; width: 65px">Обсяг</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat = "item in request4">
+                    <td style="padding-left: 3px">{{item.medicineHasIngredients.ingredients.name}}</td>
+                    <td style="padding-left: 3px">{{item.volume}}</td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/request4.js"></script>
+</html>

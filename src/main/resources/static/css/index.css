@@ -1,0 +1,190 @@
+body {
+    font: normal 12px/150% Calibri, Helvetica, sans-serif;
+    text-align: center;
+    background: #fff;
+    overflow: auto;
+    font-size: 30px;
+    color: #8992bc;
+}
+
+.datagrid table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+}
+
+.datagrid {
+    font: normal 12px/150% Calibri, Helvetica, sans-serif;
+    background: #fff;
+    overflow: auto;
+    border: 1px solid #0f0f0f;
+}
+
+.datagrid table td, .datagrid table th {
+   /* padding: 3px 10px;*/
+}
+
+.datagrid table thead th {
+    background: #aeaffa;
+    color: #0f0f0f;
+    font-size: 18px;
+    font-weight: bold;
+    border-left: 1px solid #0f0f0f;
+}
+
+.datagrid table thead th:first-child {
+    border: none;
+}
+
+.datagrid table tbody td {
+    color: #0f0f0f;
+    border-left: 1px solid #0f0f0f;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+
+.datagrid table tbody tr:nth-child(even) {
+    background: #d5d4ff;
+    /*background: #fff5d8;*/
+    color: #0f0f0f;
+}
+
+.datagrid table tbody td:first-child {
+    border-left: none;
+}
+
+.datagrid table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.checkbox {
+    transform:scale(1.9);
+    opacity:0.9;
+    cursor:pointer;
+}
+
+.btn-modal-ok{
+    background-color: #ffb348;
+    color: white;
+    cursor:pointer;
+
+}
+
+.btn-del {
+
+    border-radius: 10px;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 20px;
+    background: #d78b8c;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.btn-dang{
+    border-color: #c8665c;
+    background: #d7645d;
+}
+
+.btn-dang:hover {
+    border-color: #c8665c;
+    background: #ff908e;
+    text-decoration: none;
+}
+
+.btn-dang:active {
+    height: 20px;
+    width: 50px;
+    border-color: #c8665c;
+    background: #ff908e;
+    text-decoration: none;
+}
+
+.btn-succ{
+    border-color: #11bf62;
+    background: #11d77a;
+}
+
+.btn-succ:hover {
+    border-color: #11bf62;
+    background: #33e3a3;
+    text-decoration: none;
+}
+
+.button-main{
+    border-radius: 10px;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border-color: #3c4465;
+    background: #807cd6;
+}
+
+.button-main:hover {
+    border-color: #3c4465;
+    background: #a4a1ff;
+    text-decoration: none;
+}
+
+.btn-warn{
+    border-color: #1b71ec;
+    background: #2a88fa;
+    color:white;
+}
+
+.btn-warn:hover {
+    border-color: #1b71ec;
+    background: #4491ff;
+    text-decoration: none;
+}
+
+.my-th-selected {
+    width: 50px;
+    text-align: center;
+    font-size:14px;
+    border: 2px solid #3c4465;
+    background: #a4a1ff;
+    /*background: #fff5d8;*/
+    color: #ffffff;
+}
+.my-th {
+    width: 50px;
+    text-align: center;
+    font-size:14px;
+    border: 2px solid #3a3386;
+    background: #807cd6;
+    /*background: #fff5d8;*/
+    color: #ffffff;
+}
+
+.my-th-main {
+    width:30px;
+    text-align: center;
+    font-size:16px;
+    border: 2px solid #3a3386;
+    background: #ffffff;
+}
+
+.my-th-clicked {
+    width: 50px;
+    text-align: center;
+    font-size:14px;
+    border: 2px solid #3a3386;
+    background: #9791d6;
+    /*background: #fff5d8;*/
+    color: #ffffff;
+}
+
+.my-th:hover{
+    background: #8a66ed;
+}
+
+a {
+    color: #ffffff;
+}
+href:hover {
+    color: #dbd5ff;
+}
